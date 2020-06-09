@@ -4,8 +4,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   /* here you can define another js file */
   entry: {
-    index: "./src/js/index.js",
-    another: "./src/js/another.js",
+    index: "./src/js/script.js",
+    another: "./src/js/index.js",
   },
   output: {
     filename: "[name].[hash:8].js",
@@ -58,10 +58,28 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/pages/another.html",
+      template: "./src/pages/forms-playground.html",
       inject: true,
       chunks: ["index", "another"],
-      filename: "another.html",
+      filename: "forms-playground.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/js-fun.html",
+      inject: true,
+      chunks: ["index", "another"],
+      filename: "js-fun.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/Notatki-Grid.html",
+      inject: true,
+      chunks: ["index", "another"],
+      filename: "Notatki-Grid.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/Notatki.html",
+      inject: true,
+      chunks: ["index", "another"],
+      filename: "Notatki.html",
     }),
   ],
 };
