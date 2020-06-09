@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms playground</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,500,700&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link href="Styles/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/forms-style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <!-- <i class="fa fa-bars" style="font-size:36px"></i>  -->
+        <a class="navigation__link" href="Notatki-Grid.html">Notatki Grid</a>
+        <a class="navigation__link" href="Notatki.html">Notatki Flex</a>
+        <a class="navigation__link navigation__link--center" href="index.html"
+          >Strona Główna</a
+        >
+        <a class="navigation__link" href="js-fun.html"> Js Fun</a>
+        <a class="navigation__link" href="forms-playground.html">Formsy</a>
+      </nav>
+      <i class="fa fa-bars js-hamburger" style="font-size: 36px;"></i>
+      <img src="images/ryjson.jpg" alt="twarz" class="profile-pic" />
+    </header>
+    <main>
+      <header class="page-title">
+        <h1 class="page-title__header">Forms playground</h1>
+      </header>
+      <div class="main-column">
+        <form action="https://dev.cotenfrontend.pl" class="form">
+          <p>
+            <label for="firstName"> First Name</label>
+            <input
+              class="form__item"
+              id="firstName"
+              name="firstName"
+              placeholder="Type your first name"
+              type="text"
+              required
+            />
+          </p>
+          <p>
+            <label for="lastName"> Last Name</label>
+            <input
+              class="form__item"
+              id="lastName"
+              name="lastName"
+              placeholder="Type your last name"
+              type="text"
+            />
+          </p>
+          <p>
+            <label for="E-mail">
+              E-mail
+              <input
+                class="form__item"
+                id="E-mail"
+                name="E-mail"
+                placeholder="Type your  E-mail"
+                type="email"
+            /></label>
+          </p>
+          <p>
+            <label for="Password">
+              Password
+              <input
+                class="form__item"
+                id="Password"
+                name="Password"
+                placeholder="Type your  Password"
+                type="Password"
+            /></label>
+          </p>
+          <p>
+            <label
+              >Phone Number
+              <input
+                class="form__item"
+                id="PhoneNumber"
+                name="Phone Number"
+                placeholder="Type your Phone Number"
+                type="tel"
+              />
+            </label>
+            <label
+              >Avatar
+              <input
+                class="form__item"
+                id="PhoneNumber"
+                name="Phone Number"
+                placeholder="Type your Phone Number"
+                type="file"
+              />
+            </label>
+          </p>
+          <p>
+            <label for="pickLanguage"> Pick favourite programming language</label>
+             
+              <select id="pickLanguage">
+                <option value="langeuage-1">Java Script</option>
+                <option value="langeuage-2">Java</option>
+                <option value="langeuage-3">Python</option>
+                <option value="langeuage-4">C#</option>
+              </select>
+            
+          </p>
+          <p>
+            <label for="aboutYou"> About you</label>
+              <textarea id="aboutYou">
+ Write something about You
+              </textarea>
+            
+          </p>
+          <fieldset class="form__fieldset" name="adress">
+            <legend>Adress</legend>
+            <p>
+              <label>
+                Adress line 1
+                <input
+                  class="form__item"
+                  id="street"
+                  name="street"
+                  placeholder="Type your  street name"
+                  type="text"
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Adres line 2
+                <input
+                  class="form__item"
+                  id="street"
+                  name="street"
+                  placeholder="Type your  street name"
+                  type="text"
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                City
+                <input
+                  class="form__item"
+                  id="street"
+                  name="street"
+                  placeholder="Type your  City"
+                  type="text"
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Post Code
+                <input
+                  class="form__item"
+                  id="street"
+                  name="street"
+                  placeholder="nn-nnn"
+                  type="text"
+                />
+              </label>
+            </p>
+          </fieldset>
+          <fieldset class="form__fieldset">
+            <legend>Sex</legend>
+            <p>
+              <label
+                ><input
+                  class="form__item--sex"
+                  name="sex"
+                  type="radio"
+                  value="male"
+                />male</label
+              >
+            </p>
+            <p>
+              <label
+                ><input
+                  class="form__item--sex"
+                  name="sex"
+                  type="radio"
+                  value="female"
+                />female</label
+              >
+            </p>
+          </fieldset>
+          <fieldset class="form__fieldset form__fieldset--checkboxes">
+            <legend>Where did you hear about us?</legend>
+            <p class="checkbox">
+              <label><input type="checkbox" value="Radio" />Radio</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" value="Internet" />Internet</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" value="TV" />TV</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" value="Work" />Work</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" value="Friends" />Friends</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" value="School" />School</label>
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Rate us!</legend>
+            <p>
+              <label
+                ><p class="rangeValue">Grade:</p>
+                <input
+                  class="form__item form__item--range"
+                  type="range"
+                  min="0"
+                  max="10"
+                  step="1"
+              /></label>
+            </p>
+          </fieldset>
+          <p class="submit__area">
+            <input class="submit__button" type="submit"  type="submit" value="Send">
+          </p>
+        </form>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__socials">
+        <a
+          class="footer__socials--link"
+          href="https://www.instagram.com/bananaandi/"
+          target="_blank"
+        >
+          <i class="fa fa-heart" style="font-size: 36px;"></i
+        ></a>
+        <a
+          class="footer__socials--link"
+          href="https://www.instagram.com/galinowsky/"
+          target="_blank"
+        >
+          <i class="fa fa-instagram" style="font-size: 36px;"></i
+        ></a>
+        <a
+          class="footer__socials--link"
+          href="https://www.facebook.com/Galinowsky"
+          target="_blank"
+        >
+          <i class="fa fa-facebook-square" style="font-size: 36px;"></i
+        ></a>
+        <a
+          class="footer__socials--link"
+          href="https://www.facebook.com/Galinowsky"
+          target="_blank"
+        >
+          <i
+            class="fa fa-google-plus-square"
+            aria-hidden="true"
+            style="font-size: 36px;"
+          ></i
+        ></a>
+      </div>
+      <div class="footer__sign">
+        Jakub Galiński Kwiecień 2020
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

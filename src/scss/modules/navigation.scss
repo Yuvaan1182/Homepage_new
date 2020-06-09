@@ -1,0 +1,28 @@
+$pageOrange: #d86c46;
+.navigation {
+    max-width: 860px;
+    width: 70%;
+    min-width: 320px;
+    margin: auto;
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &__link {
+      text-decoration: none;
+      color: black;
+      letter-spacing: 3px;
+      width: 33.3%;
+      text-align: center;
+      justify-content: center;
+      &--center {
+        justify-content: center;
+      }
+      &:hover {
+        color: $pageOrange;
+        font-size: larger;
+      }
+    }
+  }
+  

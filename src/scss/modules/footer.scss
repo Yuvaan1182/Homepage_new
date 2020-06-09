@@ -1,0 +1,21 @@
+$pageOrange: #d86c46;
+.footer {
+  padding-top: 50px;
+  padding-top: 10px;
+  text-align: center;
+  align-self: flex-end;
+  bottom: 0;
+  width: 99%;
+  color: $pageOrange;
+  &__socials {
+    word-spacing: 20px;
+    padding: 5px;
+    &--link {
+      color: $pageOrange;
+    }
+  }
+  &__sign {
+    font-size: 14px;
+    padding: 6px;
+  }
+}

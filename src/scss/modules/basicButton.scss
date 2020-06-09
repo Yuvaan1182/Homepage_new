@@ -1,0 +1,22 @@
+$pageOrange: #d86c46;
+.basic-button {
+    color: white;
+    border: none;
+    text-decoration: none;
+    background-color: #555555;
+    text-align: center;
+    font-size: 19px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 5%;
+    text-align: center;
+    background-color: $pageOrange;
+    color: #543855;
+    *:hover {
+      background-color: #543855;
+      color: $pageOrange;
+    }
+  }
+  
