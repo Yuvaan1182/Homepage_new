@@ -1,10 +1,14 @@
+@import "~normalize.css";
 @import "modules/footer.scss";
 @import "modules/navigation.scss";
 @import "modules/basicButton.scss";
 
-Html {
-  box-sizing: Border-box;
-}
+@import "forms-style.scss";
+@import "style-notes-grid.scss";
+@import "style-notes.scss";
+@import "style-toDo.scss";
+
+
 
 *,
 *:before,
@@ -17,7 +21,7 @@ $pageOrange: #d86c46;
 body {
   margin: 5px;
   background: #574d67;
-  background-image: url(../images/landscape_forest.jpg);
+  background-image: url(../assets/img/landscape_forest.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom center;
