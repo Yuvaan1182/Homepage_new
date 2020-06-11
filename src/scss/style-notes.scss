@@ -1,123 +1,45 @@
+@import "variables.scss";
+@import "main-style";
+@import "modules/basicButton.scss";
+@import "modules/notePaper.scss";
+@import "modules/mainColumn.scss";
+@import "modules/footer.scss";
+
 #note-0 {
-    display: none;
+  display: none;
 }
 
 .profile-pic {
-    text-align: right;
-    float: right;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    top: 15px;
-    right: 40px;
-    
+  text-align: right;
+  float: right;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 40px;
 }
 
-.page-title{
+.page-title {
+  text-align: center;
+  margin: auto;
+  margin-top: 120px;
+
+  &__note-button {
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #555555;
     text-align: center;
-    margin: auto;
-    margin-top: 120px;
-}
-
-
-
-.page-title__note-button {
-color: white;
-border: none;
-text-decoration: none;
-display: inline-block;
-background-color: #555555;
-text-align: center;
-font-size: 20px;
-border-radius: 5%;
-text-align: center;
-background-color:#d86c46; 
-color:#543855;
-margin: 5px;
-}
-
-.page-title__note-button:hover {
-    background-color:#543855; 
-color:#d86c46; 
-;
-}
-
-
-.main-column--notes {
-    max-width: 62vW;
-    width: 90vw;
-    margin:auto;
-   
-     min-height: 61vh; 
-    min-height: 600px;
+    font-size: 20px;
+    border-radius: 5%;
     text-align: center;
-    /* overflow: hidden; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+    background-color: #d86c46;
+    color: #543855;
+    margin: 5px;
+    &:hover {
+      background-color: #543855;
+      color: $basicOrange;
+    }
+  }
 }
-
-
-.note-paper {
-    margin-top: 50px;
-    border-radius: 3%;
-    border: 0.5px solid black;
-    min-height: 330px;
-    max-width: 83vw;
-    width: 300px;
-    backdrop-filter: blur(5px);
-    height: fit-content;
-}
-
-.note-paper__title {
-    width: 100%;
-    height:40px;
-    color:#d86c46;
-}
-.note-paper__content {
-    width: 82.5%;
-    
-    text-align: justify;
-  
-}
-
-
-.note-paper__delete-button {
-    position: absolute;
-    top:5px;
-    right:4px;
-    font-size: 25px;
-}
-.note-paper__delete-button:hover {
-    position: absolute;
-    top:5px;
-    right:4px;
-    font-size: 25px;
-    color:#d86c46;
-}
-
-
-
-/* .footer  {
-    margin-top:100px;
-    padding-top: 10px;
-    text-align: center;
-    width: 100%;
-     position: absolute;
-    top: 0; 
-    color: #d86c46;
-}
-
-.footer__socials {
-    word-spacing: 20px;
-    padding: 5px;
-}
-.footer__socials--link {
-    color: #d86c46;
-}
-.footer__sign {
-    font-size:14px;
-    padding: 6px;
-} */

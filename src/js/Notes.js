@@ -1,4 +1,4 @@
-import '../scss/main-style.scss';
+import '../scss/style-notes.scss';
 
 let buttonAdd = document.querySelector(".buttonAdd")
 

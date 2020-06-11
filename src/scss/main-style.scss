@@ -1,14 +1,12 @@
 @import "~normalize.css";
+@import "variables.scss";
 @import "modules/footer.scss";
 @import "modules/navigation.scss";
 @import "modules/basicButton.scss";
+@import "modules/mainColumn.scss";
 
-@import "forms-style.scss";
-@import "style-notes-grid.scss";
-@import "style-notes.scss";
-
-
-
+// @import "forms-style.scss";
+// @import "style-notes-grid.scss";
 
 *,
 *:before,
@@ -16,12 +14,10 @@
   box-sizing: inherit;
 }
 
-$pageOrange: #d86c46;
-
 body {
   margin: 5px;
   background: #574d67;
-  background-image: url(../assets/img/landscape_forest.jpg);
+  background-image:  url(../assets/img/landscape_forest.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom center;
@@ -35,7 +31,7 @@ body {
   position: absolute;
   right: 40px;
   top: 15px;
-  color: $pageOrange;
+  color: $basicOrange;
 }
 
 .header {
@@ -45,26 +41,12 @@ body {
   padding-top: 15px;
   width: 100%;
   min-width: 300px;
-  /* -webkit-backdrop-filter: blur(10px); */
   backdrop-filter: blur(20px);
   z-index: 1000;
   min-height: 8vh;
   width: 100vw;
   margin: auto;
 }
-
-.main-column {
-  max-width: 700px;
-  width: 60%;
-  min-width: 300px;
-  text-align: center;
-  margin: auto;
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-  min-height: 78vh;
-}
-
 
 ul {
   color: rgba(255, 255, 255, 0.514);
@@ -87,10 +69,10 @@ p {
 }
 
 .page-title {
-  margin-top: 100px;
+  margin-top: 120px;
 
   &__header {
-    color: #aa441f;
+    color: $headerOrange;
     text-align: center;
     font-size: 46px;
     letter-spacing: 6px;
@@ -107,7 +89,6 @@ p {
   text-align: center;
 }
 
-
 .weekly-notes {
   margin: 40px 0px;
   padding: 25px;
@@ -116,8 +97,6 @@ p {
 .self-presentation {
   font-size: larger;
 }
-
-
 
 @media screen and (max-width: 520px) {
   .js-hamburger {

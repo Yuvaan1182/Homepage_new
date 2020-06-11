@@ -1,0 +1,26 @@
+.main-column {
+    max-width: 700px;
+    width: 60%;
+    min-width: 300px;
+    text-align: center;
+    margin: auto;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    min-height: 78vh;
+  
+  &--notes {
+    max-width: 62vw;
+    width: 90vw;
+    margin: auto;
+  
+    min-height: 61vh;
+    min-height: 600px;
+    text-align: center;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}  
