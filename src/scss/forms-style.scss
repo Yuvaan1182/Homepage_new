@@ -36,26 +36,22 @@ body {
   grid-template-columns: 1fr minmax(300px, 1fr) 1fr;
 
   grid-template-rows: auto;
-  /* column-gap: 16px; */
   min-height: 70vh;
-  /* grid-template-areas: "spacing form spacing"
-                         "spacing form spacing"; */
+
 }
 
 .form {
   display: block;
   justify-content: center;
   align-items: center;
-  /* grid-area: form; */
   grid-column-start: 2;
-  /* grid-area: form; */
   padding: 16px;
 }
 
 .form__item {
   display: block;
   width: 100%;
-  /* max-width: 500px; */
+
   justify-content: center;
 }
 .form__item--sex {

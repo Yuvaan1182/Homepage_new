@@ -28,14 +28,13 @@
     <main>
         <header class="page-title">
             <h1 class="page-title__header">Notes</h1>
-            <button class="page-title__note-button" onclick="newNote()">Nowa Notatka</button>
-            <button class="page-title__note-button" onclick="deleteAllNotes()">Usuń wszystkie</button>
+            <button class="page-title__note-button buttonAdd">Nowa Notatka</button>
+            <button class="page-title__note-button buttonDeleteAll">Usuń wszystkie</button>
         </header>
         <div class="main-column main-column--notes" id="notebook">
 
             <div class="note-paper" id="note-0" contenteditable="true">
-                <i onclick="deleteNote(this.closest('.note-paper'))"
-                    class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
+                <i class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
                 <div class="note-paper__title">
                     <h2>Title</h2>
                 </div>
@@ -47,8 +46,7 @@
             </div>
 
             <div class="note-paper" id="note-1" contenteditable="true">
-                <i onclick="deleteNote(this.closest('.note-paper'))"
-                    class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
+                <i  class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
                 <div class="note-paper__title">
                     <h2>Kim Jestem?</h2>
                 </div>
