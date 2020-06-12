@@ -1,5 +1,5 @@
 .form {
-    display: block;
+    display: grid;
     justify-content: center;
     align-items: center;
     grid-column-start: 2;
@@ -8,6 +8,7 @@
     &__item {
       display: block;
       width: 100%;
+
       justify-content: center;
       &--sex {
         width: auto;
@@ -20,7 +21,7 @@
       }
   
       &__fieldset {
-        margin: 10px -5px 10px;
+        margin: 10px 0 10px;
         &--chekboxes {
           display: flex;
           flex-direction: row;

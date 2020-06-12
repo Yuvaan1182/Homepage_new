@@ -13,11 +13,15 @@
 *:after {
   box-sizing: inherit;
 }
-
+:root{
+  --background-img:  url('../assets/img/landscape_forest.jpg');
+  --background-img-bw: url('../assets/img/landscape_forest_BW.jpg');
+  --nav-color: black;
+}
 body {
   margin: 5px;
   background: #574d67;
-  background-image:  url(../assets/img/landscape_forest.jpg);
+  background-image: var(--background-img);
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom center;
@@ -25,6 +29,10 @@ body {
   font-size: large;
   z-index: 100;
   font-weight: lighter;
+}
+
+.navigation__link {
+color: var(--nav-color);
 }
 .js-hamburger {
   display: none;
@@ -56,11 +64,13 @@ h2 {
   font-weight: lighter;
   font-size: 33px;
   text-align: center;
+  color: var(--nav-color);
 }
 h3 {
   font-weight: lighter;
   font-size: 26px;
   text-align: center;
+  color: var(--nav-color);
 }
 
 p {
@@ -109,12 +119,15 @@ p {
   .navigation {
     display: none;
   }
+  .navigation__link {
+    width: 75%;
+  }
 }
 .navigation__open {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   height: 220px;
 }

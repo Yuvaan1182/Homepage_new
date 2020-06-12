@@ -12,11 +12,14 @@
       href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,500,700&subset=latin-ext"
       rel="stylesheet"
     />
-
   </head>
 
   <body>
     <header class="header">
+      <label class="switch"  title="Toggle display mode">
+        <input class="switchInput" type="checkbox" value="true">
+        <span class="slider round"></span>
+      </label>
       <nav class="navigation">
         <!-- <i class="fa fa-bars" style="font-size:36px"></i>  -->
         <a class="navigation__link" href="Notatki-Grid.html">Notatki Grid</a>
@@ -35,90 +38,117 @@
         <h1 class="page-title__header">Forms playground</h1>
       </header>
       <div class="main-column">
-        <form action="https://dev.cotenfrontend.pl" class="form">
-          <p>
-            <label for="firstName"> First Name</label>
-            <input
-              class="form__item"
-              id="firstName"
-              name="firstName"
-              placeholder="Type your first name"
-              type="text"
-              required
-            />
-          </p>
-          <p>
-            <label for="lastName"> Last Name</label>
-            <input
-              class="form__item"
-              id="lastName"
-              name="lastName"
-              placeholder="Type your last name"
-              type="text"
-            />
-          </p>
-          <p>
-            <label for="E-mail">
-              E-mail
+        <form2 action="https://dev.cotenfrontend.pl" class="form">
+          <fieldset>
+            <legend>Personal info</legend>
+            <p>
+              <label for="firstName"> First Name</label>
               <input
                 class="form__item"
-                id="E-mail"
-                name="E-mail"
-                placeholder="Type your  E-mail"
-                type="email"
-            /></label>
-          </p>
-          <p>
-            <label for="Password">
-              Password
-              <input
-                class="form__item"
-                id="Password"
-                name="Password"
-                placeholder="Type your  Password"
-                type="Password"
-            /></label>
-          </p>
-          <p>
-            <label
-              >Phone Number
-              <input
-                class="form__item"
-                id="PhoneNumber"
-                name="Phone Number"
-                placeholder="Type your Phone Number"
-                type="tel"
+                id="firstName"
+                name="firstName"
+                placeholder="Type your first name"
+                type="text"
+                required
               />
+            </p>
+            <p>
+              <label for="lastName"> Last Name</label>
+              <input
+                class="form__item"
+                id="lastName"
+                name="lastName"
+                placeholder="Type your last name"
+                type="text"
+              />
+            </p>
+            <p>
+              <label for="E-mail">
+                E-mail
+                <input
+                  class="form__item"
+                  id="E-mail"
+                  name="E-mail"
+                  placeholder="Type your  E-mail"
+                  type="email"
+              /></label>
+            </p>
+            <p>
+              <label for="Password">
+                Password
+                <input
+                  class="form__item"
+                  id="Password"
+                  name="Password"
+                  placeholder="Type your  Password"
+                  type="Password"
+              /></label>
+            </p>
+            <p>
+              <label
+                >Phone Number
+                <input
+                  class="form__item"
+                  id="PhoneNumber"
+                  name="Phone Number"
+                  placeholder="Type your Phone Number"
+                  type="tel"
+                />
+              </label>
+            </p>
+            <p>
+              <label> Sex
+              <label
+                >
+                <input
+                  class="form__item--sex"
+                  name="sex"
+                  type="radio"
+                  value="male"
+                />male</label
+              >
+            </p>
+            <p>
+              <label
+                ><input
+                  class="form__item--sex"
+                  name="sex"
+                  type="radio"
+                  value="female"
+                />female</label
+              >
             </label>
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Account info</legend>
+          <p>
+            
             <label
               >Avatar
-              <input
-                class="form__item"
-                id="PhoneNumber"
-                name="Phone Number"
-                placeholder="Type your Phone Number"
-                type="file"
-              />
+              <input class="form__item" id="avatar" name="Avatar" type="file" />
             </label>
           </p>
           <p>
-            <label for="pickLanguage"> Pick favourite programming language</label>
-             
-              <select id="pickLanguage">
-                <option value="langeuage-1">Java Script</option>
-                <option value="langeuage-2">Java</option>
-                <option value="langeuage-3">Python</option>
-                <option value="langeuage-4">C#</option>
-              </select>
-            
+            <label for="pickLanguage">
+              Pick favourite programming language</label
+            >
+
+            <select id="pickLanguage">
+              <option value="langeuage-1">Java Script</option>
+              <option value="langeuage-2">Java</option>
+              <option value="langeuage-3">Python</option>
+              <option value="langeuage-4">C#</option>
+            </select>
           </p>
           <p>
             <label for="aboutYou"> About you</label>
-              <textarea id="aboutYou">
+            <textarea id="aboutYou">
  Write something about You
-              </textarea>
-            
+              </textarea
+            >
           </p>
+        </fieldset>
           <fieldset class="form__fieldset" name="adress">
             <legend>Adress</legend>
             <p>
@@ -170,31 +200,12 @@
               </label>
             </p>
           </fieldset>
-          <fieldset class="form__fieldset">
-            <legend>Sex</legend>
-            <p>
-              <label
-                ><input
-                  class="form__item--sex"
-                  name="sex"
-                  type="radio"
-                  value="male"
-                />male</label
-              >
-            </p>
-            <p>
-              <label
-                ><input
-                  class="form__item--sex"
-                  name="sex"
-                  type="radio"
-                  value="female"
-                />female</label
-              >
-            </p>
-          </fieldset>
+         
           <fieldset class="form__fieldset form__fieldset--checkboxes">
-            <legend>Where did you hear about us?</legend>
+            <legend>Feedback</legend>
+            <p>
+              <label>Where did You hear about us?
+     
             <p class="checkbox">
               <label><input type="checkbox" value="Radio" />Radio</label>
             </p>
@@ -213,12 +224,11 @@
             <p class="checkbox">
               <label><input type="checkbox" value="School" />School</label>
             </p>
-          </fieldset>
-          <fieldset>
-            <legend>Rate us!</legend>
+          </label>
             <p>
               <label
-                ><p class="rangeValue">Grade:</p>
+                >Rate us!
+                <p class="rangeValue">Grade:</p>
                 <input
                   class="form__item form__item--range"
                   type="range"
@@ -227,9 +237,16 @@
                   step="1"
               /></label>
             </p>
+          </p>
           </fieldset>
+         
           <p class="submit__area">
-            <input class="submit__button" type="submit"  type="submit" value="Send">
+            <input
+              class="submit__button"
+              type="submit"
+              type="submit"
+              value="Send"
+            />
           </p>
         </form>
       </div>

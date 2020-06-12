@@ -1,14 +1,16 @@
 $pageOrange: #d86c46;
+@import "switch.scss";
 .navigation {
     max-width: 860px;
     width: 70%;
     min-width: 320px;
     margin: auto;
-    padding: 15px;
+    padding: 0px;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: relative;
     &__link {
       text-decoration: none;
       color: black;
