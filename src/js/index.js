@@ -1,4 +1,6 @@
 import "../scss/main-style.scss";
+import bwBackground from "../assets/img/landscape_forest_BW.jpg"
+
 
 //-----------------Dark/Light Mode
 let modeSwitch = document.querySelector(".switchInput");
@@ -9,14 +11,14 @@ if (modeSwitch) {
     if (modeSwitch.value == "true") {
       bodyStyle.setProperty(
         "--background-img",
-        "url(src/assets/img/landscape_forest_BW.jpg)"
+        "url('../../public/landscape_forest_BW.jpg')"
       );
       navColor.setProperty( "--nav-color", "#d86c46")
       modeSwitch.value = false;
     } else if ((modeSwitch.value = "false")) {
       bodyStyle.setProperty(
         "--background-img",
-        "url(src/assets/img/landscape_forest.jpg)"
+        "url('../../public/landscape_forest.jpg')"
       );
       navColor.setProperty( "--nav-color", "black")
       modeSwitch.value = true;
