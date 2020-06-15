@@ -23,9 +23,9 @@ let deleteAllButton = document.querySelector('.buttonDeleteAll')
 let note = document.querySelector(".note-paper__delete-button")
   
 if(note){
-  console.log(note)
+
   note.addEventListener('click', () =>{
-    console.log('jajja')
+
     // console.log(document.querySelector(".note-paper__delete-button"))
     // this.closest('.note-paper')
   })
