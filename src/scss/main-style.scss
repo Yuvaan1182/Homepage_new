@@ -32,7 +32,11 @@ body {
   z-index: 100;
   font-weight: lighter;
 }
-
+.dupa {
+  
+  background-image: var(--background-img-bw);
+  display:none;
+}
 .navigation__link {
 color: var(--nav-color);
 }
