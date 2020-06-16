@@ -16,7 +16,7 @@ if (buttonAdd) {
     newNote.style.display = "inline";
     newNote.id =
       "note-" + document.querySelector("#notebook").childElementCount;
-    document.querySelector("#notebook").appendChild(newNote);
+    document.querySelector("#notebook").appendChild(newNote);git 
   });
 }
 
