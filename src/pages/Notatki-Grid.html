@@ -23,7 +23,6 @@
             <a class="navigation__link navigation__link--center" href="index.html">Strona Główna</a>
             <a class="navigation__link" href="js-fun.html"> Js Fun</a>
             <A class="navigation__link" href="forms-playground.html">Formsy</A>
-         
         </nav>
         <i class="fa fa-bars js-hamburger" style="font-size:36px"></i>
         <img src="../assets/img/ryjson.jpg" alt="twarz" class="profile-pic"> 
@@ -36,23 +35,25 @@
         </header>
         <div class="main-column main-column--notes" id="notebook">
 
-            <div class="note-paper" id="note-0" contenteditable="true">
+            <article class="note-paper" id="note-0" contenteditable="false">
                 <i class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
-                <div class="note-paper__title">
+                <header class="note-paper__title">
                     <h2>Title</h2>
-                </div>
+                </header>
 
                 <p class="note-paper__content">
                     Note texts
                 </p>
+                <footer class="note-paper__footer">
+                    <button class="page-title__note-button editSave">Edit</button>
+                </footer> 
+            </article>
 
-            </div>
-
-            <div class="note-paper" id="note-1" contenteditable="true">
+            <article class="note-paper" id="note-1" contenteditable="false">
                 <i  class="fa fa-times-circle fa-lg note-paper__delete-button" aria-hidden="true"></i>
-                <div class="note-paper__title">
+                <header class="note-paper__title">
                     <h2>Kim Jestem?</h2>
-                </div>
+                </header>
 
                 <p class="note-paper__content">Student III roku informatyki stosowanej na Uniwersytecie Ekonomicznym w
                     Krakowie. Na codzień pracuje
@@ -60,7 +61,11 @@
                     ABB jako wsparcie Administracji i rozwój arkuszy kalkulacyjnych(VBA). Po godzinach klasycznie i
                     niezmiennie Siłka lub inne podobne formy aktywności i zgłebianie tajnik wszechświata.
                 </p>
-            </div>
+
+                <footer class="note-paper__footer">
+                    <button class="page-title__note-button editSave">Edit</button>
+                </footer> 
+            </article>
 
         </div>
 
