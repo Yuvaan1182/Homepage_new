@@ -1,5 +1,12 @@
 import '../scss/style-notes.scss';
+import singleNote from '../pages/Note.html';
 
+let Notes = localStorage.getItem("Notes");
+console.log(Notes);
+if (Notes == null)  {
+  Notes = []
+  localStorage.setItem("Notes", Notes) 
+}
 let buttonAdd = document.querySelector(".buttonAdd")
 
   if (buttonAdd){ 
