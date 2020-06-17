@@ -28,6 +28,7 @@ if (Notes == null) {
       elem.title;
     document.querySelector(`#note-${idx + 1}`).querySelector("p").innerHTML =
       elem.noteText;
+      appendEditListener()
   });
 }
 // console.log(NotesArr)
@@ -38,7 +39,7 @@ if (buttonAdd) {
     newNote();
     // document.querySelector('#notebook').lastChild
     appendEditListener()
-    
+
   });
 }
 
@@ -70,10 +71,10 @@ const appendEditListener = () => {
        let notePaper = element.closest(".note-paper")
        if(notePaper.getAttribute('contenteditable') == 'true'){    // TRIGGERING THE SAVE EVENT
 
-        NotesArr[0].title = notePaper.querySelector('h2').innerHTML
-        NotesArr[0].noteText = notePaper.querySelector('p').innerHTML
+         NotesArr[0].title = notePaper.querySelector('h2').innerHTML
+         NotesArr[0].noteText = notePaper.querySelector('p').innerHTML
         console.log(NotesArr)
-       localStorage.setItem("Notes", JSON.stringify(NotesArr));
+        localStorage.setItem("Notes", JSON.stringify(NotesArr));
         notePaper.setAttribute('contenteditable','false')
        notePaper.querySelector('.editSave').innerHTML = "Edit"
         } else {notePaper.setAttribute('contenteditable','true')
