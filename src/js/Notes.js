@@ -16,7 +16,11 @@ if (buttonAdd) {
     newNote.style.display = "inline";
     newNote.id =
       "note-" + document.querySelector("#notebook").childElementCount;
-    document.querySelector("#notebook").appendChild(newNote);git 
+      console.log(newNote)
+    newNote.childNodes[1].addEventListener("click", (e) => {
+        newNote.style.display='none'
+    });
+    document.querySelector("#notebook").appendChild(newNote);
   });
 }
 
@@ -51,3 +55,11 @@ if (editSave) {
     });
   });
 }
+// console.log(document.querySelector('.editSave').className)
+// let notebook = document.querySelector('.main-column--notes')
+// if(notebook) {
+// notebook.addEventListener('click' , (e) =>{
+//   if(e.target.className == "editSave") {
+//     console.log('jaja') }
+// })
+// }
