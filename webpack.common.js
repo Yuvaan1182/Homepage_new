@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     index: "./src/js/index.js",
     notes: "./src/js/Notes.js",
-    forms: "./src/js/form.js"
+    forms: "./src/js/form.js",
+    notesGrid : "./src/js/notes-grid.js",
   },
   output: {
     filename: "[name].[hash:8].js",
@@ -73,7 +74,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/Notatki-Grid.html",
       inject: true,
-      chunks: ["index","notes"],
+      chunks: ["index","notesGrid"],
       filename: "Notatki-Grid.html",
     }),
     new HtmlWebpackPlugin({

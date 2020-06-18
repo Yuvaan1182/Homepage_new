@@ -1,35 +1,43 @@
 import "../scss/style-notes.scss";
-
+import "../scss/style-notes-grid.scss";
 import singleNote from "../pages/Note.html";
 
 let Notes = localStorage.getItem("Notes");
 let NotesArr = [];
 let emptyNote = { title: "Title", noteText: "Note text", id: 0 };
-var z = document.createRange().createContextualFragment(singleNote);
-document.querySelector("#notebook").appendChild(z);
-const newNote = () => {
-  let newNote = document.querySelector("#note-0").cloneNode(true);
-  newNote.style.display = "inline";
-  newNote.id = "note-" + document.querySelector("#notebook").childElementCount;
-  // newNote.childNodes[1].addEventListener("click", (e) => {
-  //   newNote.style.display = "none";
-  // });
-  document.querySelector("#notebook").appendChild(newNote);
+const firstNote = () => {
+  var z = document.createRange().createContextualFragment(singleNote);
+  document.querySelector("#notebook").appendChild(z);
 };
-console.log(Notes == null);
+
+const newNote = () => {    //   COPY NOTE-0 AND CREATE NEW NOTE
+  let newNote = document.createRange().createContextualFragment(singleNote);
+  document.querySelector("#notebook").appendChild(newNote);
+  
+  document.querySelector("#notebook").appendChild(newNote);
+  console.log(newNote)
+  console.log( document.querySelector("#notebook").lastElementChild)
+  document.querySelector("#notebook").lastChild.id = "note-" + (document.querySelector("#notebook").childElementCount-1);
+};
+console.log(NotesArr)
 if (Notes == null) {
-  Notes = [emptyNote];
-  localStorage.setItem("Notes", JSON.stringify(Notes));
+  console.log('jaja')
+  firstNote();
+  NotesArr.push(emptyNote)
+  localStorage.setItem("Notes", JSON.stringify(NotesArr));
 } else {
+    console.log(localStorage.getItem("Notes"))
   NotesArr = JSON.parse(localStorage.getItem("Notes"));
-  console.log(typeof NotesArr);
-  newNote();
+
+
   NotesArr.forEach((elem, idx) => {
-    document.querySelector(`#note-${idx + 1}`).querySelector("h2").innerHTML =
+    newNote();
+    document.querySelector(`#note-${idx}`).querySelector("h2").innerHTML =
       elem.title;
-    document.querySelector(`#note-${idx + 1}`).querySelector("p").innerHTML =
+    document.querySelector(`#note-${idx}`).querySelector("p").innerHTML =
       elem.noteText;
   });
+
 }
 // console.log(NotesArr)
 let buttonAdd = document.querySelector(".buttonAdd");
@@ -39,6 +47,8 @@ if (buttonAdd) {
     newNote();
     // document.querySelector('#notebook').lastChild
     appendEditListener();
+    NotesArr.push(emptyNote);
+    console.log(NotesArr);
   });
 }
 
@@ -70,10 +80,9 @@ const appendEditListener = () => {
         let notePaper = element.closest(".note-paper");
         if (notePaper.getAttribute("contenteditable") == "true") {
           // TRIGGERING THE SAVE EVENT
-         
-       
-            updateNote(notePaper.id,NotesArr)
-          
+
+          updateNote(notePaper.id, NotesArr);
+
           notePaper.setAttribute("contenteditable", "false");
           notePaper.querySelector(".editSave").innerHTML = "Edit";
         } else {
@@ -85,17 +94,14 @@ const appendEditListener = () => {
   }
 };
 
-
-const updateNote = (id,NotesArr) => {
-  console.log(id)
-  console.log(NotesArr)
-  let notePaper = document.getElementById(id)
-  let arrId = id.slice(5) -2
-  console.log(NotesArr[arrId])
-  if (NotesArr[arrId]= null) NotesArr.push(emptyNote)
-  NotesArr[arrId].title = notePaper.querySelector("h2").innerHTML;
+const updateNote = (id, NotesArr) => {
+  console.log(id);
+  console.log(NotesArr);
+  let notePaper = document.getElementById(id);
+  let arrId = id.slice(5);
+  console.log("console log: " + NotesArr[arrId].title);
+  if ((NotesArr[arrId] = null))
+    NotesArr[arrId].title = notePaper.querySelector("h2").innerHTML;
   NotesArr[arrId].noteText = notePaper.querySelector("p").innerHTML;
   localStorage.setItem("Notes", JSON.stringify(NotesArr));
-
-
-}
+};
