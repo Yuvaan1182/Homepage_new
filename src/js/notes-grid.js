@@ -2,12 +2,11 @@ import "../scss/style-notes.scss";
 import "../scss/style-notes-grid.scss";
 import singleNote from "../pages/Note.html";
 
-let Notes = localStorage.getItem("Notes");
-let NotesArr = [];
+let NotesArr = localStorage.getItem("Notes");
 let emptyNote = { title: "Title", noteText: "Note text"};
 const firstNote = () => {
-  var z = document.createRange().createContextualFragment(singleNote);
-  document.querySelector("#notebook").appendChild(z);
+  var note = document.createRange().createContextualFragment(singleNote);
+  document.querySelector("#notebook").appendChild(note);
 };
 
 const newNote = () => {
@@ -18,24 +17,55 @@ const newNote = () => {
     "note-" + (document.querySelector("#notebook").childElementCount - 1);
 
 };
+const appendEditListener = () => {
+  let editSave = document.querySelectorAll(".editSave");
+  if (editSave) {
+    editSave.forEach((element) => {
+      element.addEventListener("click", () => {
+        console.log('onclick starts')
+        let notePaper = element.closest(".note-paper");
+        let noteId = notePaper.id.slice(5)
+        console.log(NotesArr)
+        if (notePaper.getAttribute("contenteditable") == "true") {
+          console.log(noteId)
+          // TRIGGERING THE SAVE EVENT
+          console.log(NotesArr)
+        //  updateNote(notePaper.id,NotesArr);
+              if ((NotesArr[noteId] != null)){
+                  NotesArr[noteId].title = notePaper.querySelector("h2").innerHTML;
+                 NotesArr[noteId].noteText = notePaper.querySelector("p").innerHTML;
+                localStorage.setItem("Notes", JSON.stringify(NotesArr));
+            }
+          notePaper.setAttribute("contenteditable", "false");
+          notePaper.querySelector(".editSave").innerHTML = "Edit";
+        } else {
+          // console.log(NotesArr)
+          notePaper.setAttribute("contenteditable", "true");
+          notePaper.querySelector(".editSave").innerHTML = "Save";
+        }
+      });
+    });
+  }
+};
+
 console.log(NotesArr);
-if (Notes == null) {
+if (NotesArr == null) {
   console.log("jaja");
   firstNote();
   NotesArr.push(emptyNote);
   NotesArr.push({title:"dupa", noteText: "jajajajaja"})
   localStorage.setItem("Notes", JSON.stringify(NotesArr));
 } else {
-  console.log(localStorage.getItem("Notes"));
   NotesArr = JSON.parse(localStorage.getItem("Notes"));
-console.log(NotesArr)
   NotesArr.forEach((elem, idx) => {
-    newNote();
+  newNote();
     document.querySelector(`#note-${idx}`).querySelector("h2").innerHTML =
       elem.title;
     document.querySelector(`#note-${idx}`).querySelector("p").innerHTML =
       elem.noteText;
+
   });
+  appendEditListener();
 }
 // console.log(NotesArr)
 let buttonAdd = document.querySelector(".buttonAdd");
@@ -70,29 +100,7 @@ if (note) {
   });
   // let deleteNote = (elem) => {elem.style.display ='none'};
 }
-const appendEditListener = () => {
-  let editSave = document.querySelectorAll(".editSave");
-  if (editSave) {
-    editSave.forEach((element) => {
-      element.addEventListener("click", () => {
-        console.log('onclick starts')
-        let notePaper = element.closest(".note-paper");
-        if (notePaper.getAttribute("contenteditable") == "true") {
-          // TRIGGERING THE SAVE EVENT
-          console.log(NotesArr)
-           updateNote(notePaper.id,NotesArr);
 
-          notePaper.setAttribute("contenteditable", "false");
-          notePaper.querySelector(".editSave").innerHTML = "Edit";
-        } else {
-          console.log(NotesArr)
-          notePaper.setAttribute("contenteditable", "true");
-          notePaper.querySelector(".editSave").innerHTML = "Save";
-        }
-      });
-    });
-  }
-};
 
 const updateNote = (id, NotesArr) => {
   console.log(id);
@@ -100,8 +108,9 @@ const updateNote = (id, NotesArr) => {
   let notePaper = document.getElementById(id);
   let arrId = id.slice(5);
   // console.log("console log: " + NotesArr[arrId].title);
-  if ((NotesArr[arrId] = null))
+  if ((NotesArr[arrId] != null)){
     NotesArr[arrId].title = notePaper.querySelector("h2").innerHTML;
   NotesArr[arrId].noteText = notePaper.querySelector("p").innerHTML;
   localStorage.setItem("Notes", JSON.stringify(NotesArr));
+}
 };
