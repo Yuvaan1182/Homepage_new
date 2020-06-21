@@ -1,101 +1,33 @@
-import "../scss/style-notes.scss";
+import '../scss/style-notes.scss';
 
-import singleNote from "../pages/Note.html";
+let buttonAdd = document.querySelector(".buttonAdd")
 
-let Notes = localStorage.getItem("Notes");
-let NotesArr = [];
-let emptyNote = { title: "Title", noteText: "Note text", id: 0 };
-var z = document.createRange().createContextualFragment(singleNote);
-document.querySelector("#notebook").appendChild(z);
-const newNote = () => {
-  let newNote = document.querySelector("#note-0").cloneNode(true);
-  newNote.style.display = "inline";
-  newNote.id = "note-" + document.querySelector("#notebook").childElementCount;
-  // newNote.childNodes[1].addEventListener("click", (e) => {
-  //   newNote.style.display = "none";
-  // });
-  document.querySelector("#notebook").appendChild(newNote);
-};
-console.log(Notes == null);
-if (Notes == null) {
-  Notes = [emptyNote];
-  localStorage.setItem("Notes", JSON.stringify(Notes));
-} else {
-  NotesArr = JSON.parse(localStorage.getItem("Notes"));
-  console.log(typeof NotesArr);
-  newNote();
-  NotesArr.forEach((elem, idx) => {
-    document.querySelector(`#note-${idx + 1}`).querySelector("h2").innerHTML =
-      elem.title;
-    document.querySelector(`#note-${idx + 1}`).querySelector("p").innerHTML =
-      elem.noteText;
-  });
-}
-// console.log(NotesArr)
-let buttonAdd = document.querySelector(".buttonAdd");
+  if (buttonAdd){ 
+    buttonAdd.addEventListener('click', () => {
+    let newNote = document.querySelector('#note-0').cloneNode(true)
+    newNote.style.display = 'inline'
+    newNote.id = "note-" + document.querySelector("#notebook").childElementCount
+    document.querySelector("#notebook").appendChild(newNote);
+})
+ }
 
-if (buttonAdd) {
-  buttonAdd.addEventListener("click", () => {
-    newNote();
-    // document.querySelector('#notebook').lastChild
-    appendEditListener();
-  });
+let deleteAllButton = document.querySelector('.buttonDeleteAll')
+ if(deleteAllButton){ deleteAllButton.addEventListener('click', () => {
+    Array.from(document.getElementsByClassName('note-paper')).forEach( elem => {
+      elem.style.display = 'none'
+
+    })
+  })
 }
 
-let deleteAllButton = document.querySelector(".buttonDeleteAll");
-if (deleteAllButton) {
-  deleteAllButton.addEventListener("click", () => {
-    Array.from(document.getElementsByClassName("note-paper")).forEach(
-      (elem) => {
-        elem.remove();
-      }
-    );
-  });
-}
+let note = document.querySelector(".note-paper__delete-button")
+  
+if(note){
 
-let note = document.querySelector(".note-paper__delete-button");
+  note.addEventListener('click', () =>{
 
-if (note) {
-  note.addEventListener("click", () => {
-    console.log(document.querySelector(".note-paper__delete-button"));
+    // console.log(document.querySelector(".note-paper__delete-button"))
     // this.closest('.note-paper')
-  });
-  // let deleteNote = (elem) => {elem.style.display ='none'};
-}
-const appendEditListener = () => {
-  let editSave = document.querySelectorAll(".editSave");
-  if (editSave) {
-    editSave.forEach((element) => {
-      element.addEventListener("click", () => {
-        let notePaper = element.closest(".note-paper");
-        if (notePaper.getAttribute("contenteditable") == "true") {
-          // TRIGGERING THE SAVE EVENT
-         
-       
-            updateNote(notePaper.id,NotesArr)
-          
-          notePaper.setAttribute("contenteditable", "false");
-          notePaper.querySelector(".editSave").innerHTML = "Edit";
-        } else {
-          notePaper.setAttribute("contenteditable", "true");
-          notePaper.querySelector(".editSave").innerHTML = "Save";
-        }
-      });
-    });
-  }
-};
-
-
-const updateNote = (id,NotesArr) => {
-  console.log(id)
-  console.log(NotesArr)
-  let notePaper = document.getElementById(id)
-  let arrId = id.slice(5) -2
-  console.log(NotesArr[arrId])
-  if (NotesArr[arrId]= null) NotesArr.push(emptyNote)
-  NotesArr[arrId].title = notePaper.querySelector("h2").innerHTML;
-  NotesArr[arrId].noteText = notePaper.querySelector("p").innerHTML;
-  localStorage.setItem("Notes", JSON.stringify(NotesArr));
-
-
+  })
+// let deleteNote = (elem) => {elem.style.display ='none'};
 }

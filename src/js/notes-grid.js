@@ -97,12 +97,3 @@ if (deleteAllButton) {
   });
 }
 
-// const updateNote = (id, NotesArr) => {
-//   let notePaper = document.getElementById(id);
-//   let arrId = id.slice(5);
-//   if (NotesArr[arrId] != null) {
-//     NotesArr[arrId].title = notePaper.querySelector("h2").innerHTML;
-//     NotesArr[arrId].noteText = notePaper.querySelector("p").innerHTML;
-//     localStorage.setItem("Notes", JSON.stringify(NotesArr));
-//   }
-// };
