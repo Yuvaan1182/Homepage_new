@@ -34,11 +34,12 @@ text-align: center;
 background-color:#d86c46; 
 color:#543855;
 margin: 5px;
+transition: color 0.3s linear, background-color 0.3s linear;
 }
 
 .page-title__note-button:hover {
     background-color:#543855; 
-color:#d86c46; 
+    color:#d86c46; 
 ;
 }
 
@@ -92,6 +93,7 @@ color:#d86c46;
     top:5px;
     right:4px;
     font-size: 25px;
+    transition: color 0.3 linear,
 }
 .note-paper__delete-button:hover {
     position: absolute;

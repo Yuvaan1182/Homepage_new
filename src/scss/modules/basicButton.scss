@@ -14,6 +14,7 @@ $pageOrange: #d86c46;
     text-align: center;
     background-color: $pageOrange;
     color: #543855;
+    transition: color 0.3s linear, background-color 0.3s linear;
     *:hover {
       background-color: #543855;
       color: $pageOrange;

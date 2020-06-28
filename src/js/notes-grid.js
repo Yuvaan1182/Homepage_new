@@ -57,6 +57,8 @@ const appendEditListener = () => {
 
 if (NotesArr == null) {
   firstNote();
+  console.log(firstNote)
+  NotesArr = []
   NotesArr.push(emptyNote);
   localStorage.setItem("Notes", JSON.stringify(NotesArr));
   appendDeleteEvent();
