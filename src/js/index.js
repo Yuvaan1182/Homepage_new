@@ -26,3 +26,26 @@ if (window) {
   });
 }
 //-------------------------- Range rate us
+
+//========================== GH FETCH API
+
+// if(!Projects)
+fetch("https://api.github.com/users/galinowsky/repos?sort=created")
+  .then((resp) => resp.json())
+  .then((resp) => {
+    console.log(resp);
+    localStorage.setItem("Projects", JSON.stringify(resp));
+  })
+  .catch(console.log((error) => console.log("error")));
+
+let Projects = JSON.parse(localStorage.getItem("Projects"));
+
+const repoList = document.querySelector(".repo-list");
+for (let proj of Projects) {
+  const { name, html_url } = proj;
+  const rowTemplate = `
+  <li><strong>${name}</strong> - <a href="${html_url}" 
+  title ="link do repozytorium na github.com" 
+  target="_blank">Link do github</a></li>`;
+  repoList.innerHTML += rowTemplate;
+}
