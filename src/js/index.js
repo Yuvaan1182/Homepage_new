@@ -44,8 +44,8 @@ const repoList = document.querySelector(".repo-list");
 for (let proj of Projects) {
   const { name, html_url } = proj;
   const rowTemplate = `
-  <li><strong>${name}</strong> - <a href="${html_url}" 
-  title ="link do repozytorium na github.com" 
+  <li><strong>${name}</strong> - <a href="${html_url}" class="github-ext-link"
+  title ="link do repozytorium na github.com"
   target="_blank">Link do github</a></li>`;
   repoList.innerHTML += rowTemplate;
 }

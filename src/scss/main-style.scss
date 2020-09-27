@@ -33,7 +33,7 @@ body {
   font-weight: lighter;
 }
 .dupa {
-  
+
   background-image: var(--background-img-bw);
   display:none;
 }
@@ -61,7 +61,7 @@ color: var(--nav-color);
   width: 100vw;
   margin: auto;
 }
-
+.github-ext-link {text-decoration: none;}
 ul {
   color: rgba(255, 255, 255, 0.514);
   padding-left: 10px;
@@ -81,7 +81,7 @@ h3 {
 }
 
 p {
-  margin: 30px;
+  // margin: 30px;
   color: rgba(255, 255, 255, 0.514);
 }
 

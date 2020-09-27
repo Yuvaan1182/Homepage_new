@@ -5,7 +5,7 @@ import singleNote from "../pages/Note.html";
 let NotesArr = localStorage.getItem("Notes");
 let emptyNote = { title: "Title", noteText: "Note text" };
 const firstNote = () => {
-  var note = document.createRange().createContextualFragment(singleNote);
+ var note =  
   document.querySelector("#notebook").appendChild(note);
   appendDeleteEvent();
 };
