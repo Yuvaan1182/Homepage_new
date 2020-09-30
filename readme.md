@@ -12,13 +12,13 @@ Project Contains:
 ## How to use it?
 
 1. clone repository on your workspace
-2. 
+2. check for node version in .json file if version is same as your node in .json, simply write in your terminal install node else write change node version which you prefer.
 
 ## How to edit this
 
 1. Clone repository on your computer using github
 2. Make sure that You have node js installed on your computer
-3. in console  type `npm install` to install all necessary packeges and dependencies
+3. in console  type `npm install` to install all necessary packages and dependencies
 4. Edit files in `/src` directory
 5. Use scripts listed below. 
 
